@@ -1,0 +1,11 @@
+# Compiled files
+*.exe
+*.o
+*.out
+# Build directory (if you use one)
+build/
+# VS Code specific files
+.vscode/
+
+# Other generated files
+*.log
