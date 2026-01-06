@@ -1,24 +1,40 @@
-#include<stdio.h>
-#define N 10
+#include <stdio.h>
+
+#define LEN 20
+
+struct student
+
+{
+
+    char no[LEN];
+    float average;
+};
+
+void input(struct student s[], int n); /*输入n个学生的情况*/
+
+float average1(struct student s[], int n); /*求学生的平均分*/
+
+float average(struct student s[], int n); /*求三门课的总平均分*/
+
+int max(struct student s[], int n); /*返回最高分学生的序号*/
+
+float maxScore(struct student s[], int n); /*返回最高分*/
 
 int main()
+
 {
-    int a[N],*p,*q;
-    //输入数组
-    for(int i=0;i<N;i++)
-        scanf("%d",&a[i]);
 
- 
-for (int i = 0, j = N - 1; i < j; ++i, --j) {
-    int t = a[i];
-    a[i] = a[j];
-    a[j] = a[i]; 
-}
+    struct student stu[10];
 
+    int n;
 
-    //输出逆序数组
-    for(int i=0;i<N;i++)
-        printf("%d ",a[i]);
+    float aver;
 
-    return 0;
+    ……
+
+        input(stu, n);
+
+    ……
+
+        return 0;
 }
