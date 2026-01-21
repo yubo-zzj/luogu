@@ -67,7 +67,7 @@ int main() {
         int lca1 = lca(a, b);
         int lca2 = lca(c, d); 
         if(dis(a, lca2) + dis(b, lca2) == dis(a, b)) {
-            cout << "Y\n"; 
+            cout << "Y\n";
         } else if(dis(c, lca1) + dis(d, lca1) == dis(c, d)) {
             cout << "Y\n"; 
         } else
