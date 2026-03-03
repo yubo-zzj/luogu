@@ -20,19 +20,20 @@ struct _segtree_ {
         build(a[p].rs, mid + 1, r);
         return;
     }
-    int update(int p, int l, int r, int pos, int x) {
-        int rt = ++cnt;
-        a[rt] = a[p];
+    void update(int &p, int l, int r, int pos, int x) {
+        ++cnt;
+        a[cnt] = a[p]; 
+        p = cnt;
         if (l == r) {
-            a[rt].data = x;
+            a[p].data = x;
         } else {
             int mid = (l + r) >> 1;
             if (pos <= mid)
-                a[rt].ls = update(a[rt].ls, l, mid, pos, x);
+                update(a[p].ls, l, mid, pos, x);
             if (pos > mid)
-                a[rt].rs = update(a[rt].rs, mid + 1, r, pos, x);
+                update(a[p].rs, mid + 1, r, pos, x);
         }
-        return rt;
+        return ;
     }
     int query(int p, int l, int r, int pos) {
         if (l == r)
@@ -66,7 +67,8 @@ int main() {
         if (opt == 1) {
             int p, c;
             cin >> p >> c;
-            segtree.root[i] = segtree.update(segtree.root[v], 1, n, p, c);
+            segtree.root[i] = segtree.root[v];
+            segtree.update(segtree.root[i], 1, n, p, c);
         }
         if (opt == 2) {
             int p;
